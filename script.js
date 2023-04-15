@@ -54,5 +54,4 @@ function animateHeader() {
   });
 }
 
-// Call the animateHeader function to animate the header
 animateHeader();
