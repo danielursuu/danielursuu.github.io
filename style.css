@@ -97,17 +97,6 @@ main {
   z-index: 10000;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-    border-width: 6px;
-  }
-  100% {
-    transform: rotate(360deg);
-    border-width: 2px;
-  }
-}
-
 #preloader::before {
   content: "";
   width: 100px;
@@ -120,6 +109,12 @@ main {
 
 #percentage {
   position: absolute;
-  font-size: 30px;
+  font-size: 1.4rem;
   color: #ffffff;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
