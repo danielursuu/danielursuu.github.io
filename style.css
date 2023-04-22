@@ -1,4 +1,8 @@
-/* Reset browser default styles */
+@font-face {
+  font-family: "Alcubierre";
+  src: url("./Alcubierre.otf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +10,8 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  /* font-family: "Inter", sans-serif; */
+  font-family: "Alcubierre", sans-serif;
   background-color: rgb(0, 0, 0);
   color: #fff;
 }
