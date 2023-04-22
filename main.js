@@ -1,4 +1,24 @@
 function main() {
+  const gridItems = document.querySelectorAll(".grid-item");
+  const cursor = document.querySelector(".custom-cursor");
+
+  gridItems.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      document.body.classList.add("custom-cursor-enabled");
+    });
+
+    item.addEventListener("mouseleave", () => {
+      document.body.classList.remove("custom-cursor-enabled");
+    });
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.pageX + "px";
+    cursor.style.top = e.pageY + "px";
+    const gridItemHovered = document.elementsFromPoint(e.clientX, e.clientY).some((element) => element.classList.contains("grid-item"));
+    cursor.style.display = gridItemHovered ? "block" : "none";
+  });
+
   window.onresize = function () {
     colWidth = document.querySelector(".grid-item").clientWidth;
   };
@@ -163,7 +183,7 @@ gridItems.forEach((item) => {
   let timer;
 
   const startEvent = (e) => {
-    timer = setTimeout(() => handleLongPress(e, item), 500);
+    timer = setTimeout(() => handleLongPress(e, item), 200);
   };
 
   const endEvent = (e) => {
